@@ -7,7 +7,7 @@ export const createOrUpdateUser = async (
     first_name: string,
     last_name: string,
     username: string,
-    email_address: string,
+    email_addresses: string,
     image_url: string
 ) => {
     try {
@@ -19,12 +19,14 @@ export const createOrUpdateUser = async (
                     firstName: first_name,
                     lastName: last_name,
                     username: username,
-                    email: email_address,
-                    image: image_url
+                    email: email_addresses,
+                    profilPicture: image_url
                 }
             },{ new: true, upsert: true }
-        );
+        );console.log(user);
+        
             return user;
+            
     } catch (error) {
         console.log("Error creating or updating user", error);
     }
