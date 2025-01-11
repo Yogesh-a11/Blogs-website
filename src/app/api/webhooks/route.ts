@@ -56,7 +56,7 @@ export async function POST(req: Request) {
 
 if (eventType === 'user.created' || eventType === 'user.updated') {
     const {
-        id : clerkId,
+        id,
         email_addresses,
         first_name,
         last_name,
